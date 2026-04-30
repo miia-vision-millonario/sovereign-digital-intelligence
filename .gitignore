@@ -1,0 +1,19 @@
+# MININA Industrial - Git Exclusion List
+# Bloqueo estricto de secretos y llaves
+
+.env
+*.bin
+*.db
+vault/
+financial_vault.bin
+credentials.json
+*.log
+scratch/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Excluir configuraciones locales del agente
+millonario_config.json
+secret_keys.txt
+github_token.txt
