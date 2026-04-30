@@ -5,17 +5,17 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Premium Report: Remote Work Productivity | Sovereign Digital</title>
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
             <style>
         :root {
-            --bg: #0a0b10;
-            --surface: #161821;
+            --bg: #050608;
+            --surface: #0f1116;
             --accent: #00f2ff;
-            --accent-glow: rgba(0, 242, 255, 0.3);
+            --accent-glow: rgba(0, 242, 255, 0.15);
             --text-main: #e2e8f0;
             --text-dim: #94a3b8;
-            --gold: #d4af37;
-            --border: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.05);
+            --gradient: linear-gradient(135deg, #00f2ff, #7000ff);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,11 +32,11 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center;
-            background: rgba(10, 11, 16, 0.8);
-            backdrop-filter: blur(12px);
+            background: rgba(5, 6, 8, 0.8);
+            backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             border-bottom: 1px solid var(--border);
         }
 
@@ -48,42 +48,19 @@
             color: white;
         }
 
-        .logo-svg {
-            width: 38px;
-            height: 38px;
-            fill: var(--accent);
-            filter: drop-shadow(0 0 8px var(--accent));
-        }
+        .logo-svg { width: 32px; height: 32px; filter: drop-shadow(0 0 8px var(--accent)); }
 
         .brand-name {
             font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
             text-transform: uppercase;
         }
 
         .hero {
             padding: 8rem 5% 5rem;
             text-align: center;
-            background: radial-gradient(circle at 50% 50%, rgba(0,242,255,0.08) 0%, transparent 70%);
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            letter-spacing: -3px;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-dim);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
+            background: radial-gradient(circle at 50% 50%, rgba(0,242,255,0.05) 0%, transparent 70%);
         }
 
         .badge {
@@ -92,42 +69,60 @@
             background: var(--accent-glow);
             color: var(--accent);
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(0,242,255,0.5);
-            letter-spacing: 1px;
+            border: 1px solid rgba(0,242,255,0.2);
         }
 
-        .container { max-width: 1300px; margin: 0 auto; padding: 2rem 5% 6rem; }
-        
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
-            gap: 3rem; 
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(to bottom, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .card { 
-            background: var(--surface); 
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 10rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: 24px;
+            overflow: hidden;
             border: 1px solid var(--border);
-            border-radius: 28px; 
-            overflow: hidden; 
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
+            transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
-        .card:hover { 
-            transform: translateY(-12px) scale(1.02); 
+        .card:hover {
+            transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 30px var(--accent-glow);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
         .card-img-wrapper {
             position: relative;
-            height: 220px;
+            height: 200px;
             overflow: hidden;
         }
 
@@ -135,74 +130,67 @@
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: 0.6s;
-            opacity: 0.8;
+            transition: 0.8s;
+            filter: grayscale(0.8) contrast(1.2);
         }
 
-        .card:hover .card-img { opacity: 1; transform: scale(1.1); }
+        .card:hover .card-img { filter: grayscale(0); transform: scale(1.1); }
 
-        .card-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         
         .card-tag {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             color: var(--accent);
-            font-weight: 800;
-            margin-bottom: 0.75rem;
+            font-weight: 900;
             letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
 
-        .card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #fff; font-weight: 800; line-height: 1.2; }
-        .card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; color: #fff; font-weight: 800; line-height: 1.2; }
+        .card p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1; }
 
         .price-tag {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1.5rem;
+            padding-top: 1.2rem;
             border-top: 1px solid var(--border);
         }
 
-        .price { font-size: 1.8rem; font-weight: 900; color: #fff; }
+        .price { font-size: 1.4rem; font-weight: 900; color: #fff; }
         
         .buy-btn { 
-            background: var(--accent); 
+            background: #fff; 
             color: #000; 
             text-decoration: none; 
-            padding: 12px 28px; 
-            border-radius: 14px; 
-            font-weight: 800; 
-            font-size: 0.9rem;
+            padding: 10px 20px; 
+            border-radius: 10px; 
+            font-weight: 900; 
+            font-size: 0.8rem;
             transition: 0.3s;
-            box-shadow: 0 4px 15px var(--accent-glow);
         }
 
-        .buy-btn:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.3); }
+        .buy-btn:hover { background: var(--accent); transform: scale(1.05); }
 
         footer { 
             text-align: center; 
-            padding: 6rem 2rem; 
-            background: #050608;
+            padding: 5rem 2rem; 
             border-top: 1px solid var(--border);
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
-        .footer-logo { margin-bottom: 1.5rem; opacity: 0.5; }
-
-        /* Post Page Styles */
-        .post-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
-        .post-header { margin-bottom: 3rem; text-align: center; }
+        .post-container { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
         .post-content { 
-            font-size: 1.15rem; 
+            font-size: 1.1rem; 
             color: #cbd5e1; 
             background: var(--surface);
             padding: 3rem;
             border-radius: 32px;
             border: 1px solid var(--border);
+            line-height: 1.8;
         }
-        .post-content h2 { color: var(--accent); margin: 2.5rem 0 1.5rem; font-size: 1.8rem; }
-        .post-content p { margin-bottom: 1.5rem; }
         </style>
         </head>
         <body>
@@ -216,9 +204,8 @@
                     <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
                 </linearGradient>
             </defs>
-            <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="none" stroke="url(#logoGrad)" stroke-width="5"/>
-            <path d="M50 20 L75 35 L75 65 L50 80 L25 65 L25 35 Z" fill="url(#logoGrad)" opacity="0.3"/>
-            <path d="M50 40 L60 50 L50 60 L40 50 Z" fill="#fff"/>
+            <rect x="25" y="25" width="50" height="50" rx="12" fill="none" stroke="url(#logoGrad)" stroke-width="8"/>
+            <path d="M40 50 L50 40 L60 50 L50 60 Z" fill="url(#logoGrad)"/>
         </svg>
         
                     <span class="brand-name">Sovereign Digital</span>
@@ -226,26 +213,24 @@
             </header>
 
             <div class="post-container">
-                <div class="post-header">
+                <div style="margin-bottom: 3rem; text-align: center;">
                     <div class="badge">REMOTE_WORK_PRODUCTIVITY</div>
-                    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem;">Premium Report: Remote Work Productivity</h1>
-                    <div class="price" style="color: var(--accent); font-size: 2.5rem;">$9.99</div>
+                    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; line-height: 1.1;">Premium Report: Remote Work Productivity</h1>
+                    <div class="price" style="color: var(--accent); font-size: 2rem;">$9.99</div>
                 </div>
+                
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200&h=800" style="width:100%; border-radius: 24px; margin-bottom: 3rem; border: 1px solid var(--border);">
 
                 <div class="post-content">
-                    <p>Contenido encriptado.</p>
-                    
-                    <div style="margin-top: 4rem; text-align: center; padding: 3rem; background: rgba(0,242,255,0.05); border-radius: 20px; border: 1px dashed var(--accent);">
-                        <h3 style="margin-bottom: 1rem;">¿Listo para ejecutar esta asimetría?</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 2rem;">Al adquirir este activo, recibes el protocolo completo de ejecución, datasets y herramientas de automatización vinculadas.</p>
-                        <a href="#" class="buy-btn" style="font-size: 1.2rem; padding: 15px 40px;">ADQUIRIR LICENCIA INDUSTRIAL</a>
-                    </div>
+                    <p>Contenido confidencial.</p>
+                </div>
+                
+                <div style="margin-top: 4rem; text-align: center; background: var(--surface); padding: 3rem; border-radius: 32px; border: 1px solid var(--accent);">
+                    <h2 style="margin-bottom: 1rem;">Adquirir Reporte Completo</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 2rem;">Acceso inmediato al protocolo de ejecución industrial.</p>
+                    <a href="#" class="buy-btn" style="padding: 15px 40px; font-size: 1rem;">COMPRAR AHORA</a>
                 </div>
             </div>
-
-            <footer>
-                &copy; 2026 Sovereign Digital Intelligence | Producido por MININA
-            </footer>
         </body>
         </html>
         
