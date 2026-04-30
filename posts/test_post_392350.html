@@ -51,7 +51,6 @@
             width: 32px; 
             height: 32px; 
             filter: drop-shadow(0 0 8px var(--accent));
-            object-fit: contain; 
         }
 
         .brand-name {
@@ -115,6 +114,8 @@
             transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
+            text-decoration: none;
+            color: inherit;
         }
 
         .card:hover {
@@ -126,7 +127,7 @@
         .card-img-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* Aspect Ratio 16:9 */
+            padding-top: 56.25%; /* 16:9 */
             overflow: hidden;
         }
 
@@ -138,10 +139,9 @@
             height: 100%; 
             object-fit: cover; 
             transition: 1s;
-            filter: grayscale(0.5) contrast(1.1);
         }
 
-        .card:hover .card-img { filter: grayscale(0); transform: scale(1.05); }
+        .card:hover .card-img { transform: scale(1.05); }
 
         .card-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
         
@@ -174,15 +174,11 @@
         .buy-btn { 
             background: white; 
             color: black; 
-            text-decoration: none; 
-            padding: 12px 24px; 
-            border-radius: 12px; 
+            padding: 10px 20px; 
+            border-radius: 10px; 
             font-weight: 900; 
-            font-size: 0.85rem;
-            transition: 0.3s;
+            font-size: 0.8rem;
         }
-
-        .buy-btn:hover { background: var(--accent); transform: scale(1.05); }
 
         footer { 
             text-align: center; 
@@ -209,7 +205,7 @@
             overflow: hidden;
             margin-bottom: 4rem;
             border: 1px solid var(--border);
-            aspect-ratio: 16 / 7;
+            aspect-ratio: 16 / 9;
         }
         
         .post-img { width: 100%; height: 100%; object-fit: cover; }
@@ -242,17 +238,17 @@
                 </div>
                 
                 <div class="post-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200&h=800" class="post-img" alt="Mastering Ai Automation Agents: Industrial Strategies">
+                    <img src="../assets/covers/test_post_392350.png" class="post-img" alt="Mastering Ai Automation Agents: Industrial Strategies" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200&h=800'">
                 </div>
 
                 <div class="post-content">
-                    <p>Contenido confidencial.</p>
+                    Contenido en proceso de auditoría industrial...
                 </div>
                 
-                <div style="margin-top: 5rem; text-align: center; background: linear-gradient(135deg, #161821, #050608); padding: 4rem; border-radius: 32px; border: 1px solid var(--accent); box-shadow: 0 0 40px rgba(0,242,255,0.1);">
+                <div style="margin-top: 5rem; text-align: center; background: #161821; padding: 4rem; border-radius: 32px; border: 1px solid var(--accent);">
                     <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Adquirir Protocolo Completo</h2>
-                    <p style="color: var(--text-dim); margin-bottom: 2.5rem; font-size: 1.1rem;">Obtén acceso inmediato a la ejecución industrial de este activo.</p>
-                    <a href="#" class="buy-btn" style="padding: 18px 45px; font-size: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">ORDENAR AHORA</a>
+                    <p style="color: var(--text-dim); margin-bottom: 2.5rem;">Obtén acceso inmediato a la ejecución industrial de este activo.</p>
+                    <a href="#" class="buy-btn" style="padding: 18px 45px; font-size: 1.1rem; text-decoration: none;">ORDENAR AHORA</a>
                 </div>
             </div>
 
