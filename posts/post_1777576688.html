@@ -1,56 +1,251 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Automation: Ai Automation Agents - Sovereign Digital Intelligence</title>
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        .hero { background: url('../assets/covers/post_1777576688.png') no-ascii; background-size: cover; height: 300px; border-radius: 15px; margin-bottom: 2rem; position: relative; }
-        .badge { background: #ff4757; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; position: absolute; top: 20px; right: 20px; }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>SOVEREIGN DIGITAL</h1>
-        <p>Expert Insights & Strategic Asset Analysis</p>
-    </header>
-    <div class="container">
-        <div class="post-card" style="border: none; background: #111;">
-            <div style="text-align: center;">
-                <img src="../assets/covers/post_1777576688.png" alt="Product Cover" style="max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.8);">
-            </div>
-            
-            <h2 style="color: #2575fc; margin-top: 2rem;">Oportunidad de Arbitraje en AI Automation Agents</h2>
-            <div class="post-meta">Publicado el 30 de April, 2026 | Inteligencia de Mercado</div>
-            
-            <p><strong>Urgente:</strong> El sector de <em>AI Automation Agents</em> est&aacute; experimentando una transici&oacute;n sin precedentes. Los datos capturados por nuestro motor de escaneo indican una asimetr&iacute;a de valor que solo los primeros en actuar podr&aacute;n capitalizar.</p>
-            
-            <p>Nuestro activo estrat&eacute;gico <strong>Sovereign Automation: Ai Automation Agents</strong> no es un simple libro; es una hoja de ruta operativa dise&ntilde;ada para extraer valor real en condiciones de mercado vol&aacute;tiles.</p>
-            
-            <div style="background: #222; padding: 1.5rem; border-left: 4px solid #2575fc; margin: 2rem 0;">
-                <h3 style="margin-top:0;">Lo que este activo desbloquea:</h3>
-                <ul style="line-height: 1.8;">
-                    <li><strong>Protocolos de Ejecuci&oacute;n:</strong> Pasos exactos para dominar AI_Automation_Agents.</li>
-                    <li><strong>An&aacute;lisis de Riesgo:</strong> Mitigaci&oacute;n de fallos en la implementaci&oacute;n.</li>
-                    <li><strong>Escalabilidad:</strong> C&oacute;mo llevar este conocimiento al nivel industrial.</li>
-                </ul>
+
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sovereign Automation: Ai Automation Agents | Sovereign Digital</title>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+            <style>
+        :root {
+            --bg: #0a0b10;
+            --surface: #161821;
+            --accent: #00f2ff;
+            --accent-glow: rgba(0, 242, 255, 0.3);
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --gold: #d4af37;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--text-main); 
+            font-family: 'Inter', -apple-system, system-ui, sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header { 
+            padding: 1.5rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            background: rgba(10, 11, 16, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-svg {
+            width: 38px;
+            height: 38px;
+            fill: var(--accent);
+            filter: drop-shadow(0 0 8px var(--accent));
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            padding: 8rem 5% 5rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(0,242,255,0.08) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0,242,255,0.5);
+            letter-spacing: 1px;
+        }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 2rem 5% 6rem; }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
+            gap: 3rem; 
+        }
+
+        .card { 
+            background: var(--surface); 
+            border: 1px solid var(--border);
+            border-radius: 28px; 
+            overflow: hidden; 
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { 
+            transform: translateY(-12px) scale(1.02); 
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 30px var(--accent-glow);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.6s;
+            opacity: 0.8;
+        }
+
+        .card:hover .card-img { opacity: 1; transform: scale(1.1); }
+
+        .card-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        .card-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #fff; font-weight: 800; line-height: 1.2; }
+        .card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; }
+
+        .price-tag {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .price { font-size: 1.8rem; font-weight: 900; color: #fff; }
+        
+        .buy-btn { 
+            background: var(--accent); 
+            color: #000; 
+            text-decoration: none; 
+            padding: 12px 28px; 
+            border-radius: 14px; 
+            font-weight: 800; 
+            font-size: 0.9rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .buy-btn:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,255,255,0.3); }
+
+        footer { 
+            text-align: center; 
+            padding: 6rem 2rem; 
+            background: #050608;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .footer-logo { margin-bottom: 1.5rem; opacity: 0.5; }
+
+        /* Post Page Styles */
+        .post-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .post-header { margin-bottom: 3rem; text-align: center; }
+        .post-content { 
+            font-size: 1.15rem; 
+            color: #cbd5e1; 
+            background: var(--surface);
+            padding: 3rem;
+            border-radius: 32px;
+            border: 1px solid var(--border);
+        }
+        .post-content h2 { color: var(--accent); margin: 2.5rem 0 1.5rem; font-size: 1.8rem; }
+        .post-content p { margin-bottom: 1.5rem; }
+        </style>
+        </head>
+        <body>
+            <header>
+                <a href="../index.html" class="logo-container">
+                    
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00f2ff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="none" stroke="url(#logoGrad)" stroke-width="5"/>
+            <path d="M50 20 L75 35 L75 65 L50 80 L25 65 L25 35 Z" fill="url(#logoGrad)" opacity="0.3"/>
+            <path d="M50 40 L60 50 L50 60 L40 50 Z" fill="#fff"/>
+        </svg>
+        
+                    <span class="brand-name">Sovereign Digital</span>
+                </a>
+            </header>
+
+            <div class="post-container">
+                <div class="post-header">
+                    <div class="badge">AI_AUTOMATION_AGENTS</div>
+                    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem;">Sovereign Automation: Ai Automation Agents</h1>
+                    <div class="price" style="color: var(--accent); font-size: 2.5rem;">$9.99</div>
+                </div>
+
+                <div class="post-content">
+                    <p>Contenido encriptado.</p>
+                    
+                    <div style="margin-top: 4rem; text-align: center; padding: 3rem; background: rgba(0,242,255,0.05); border-radius: 20px; border: 1px dashed var(--accent);">
+                        <h3 style="margin-bottom: 1rem;">¿Listo para ejecutar esta asimetría?</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 2rem;">Al adquirir este activo, recibes el protocolo completo de ejecución, datasets y herramientas de automatización vinculadas.</p>
+                        <a href="#" class="buy-btn" style="font-size: 1.2rem; padding: 15px 40px;">ADQUIRIR LICENCIA INDUSTRIAL</a>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin: 2rem 0; padding: 1rem; border: 1px solid #333; border-radius: 10px; background: #0a0a0a;">
-                <h4 style="color: #00d2ff; margin-top: 0;">🛠️ Recursos Gratuitos Recomendados</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Inicia tu camino hoy mismo con estas herramientas sin coste:</p>
-                <ul style="font-size: 0.85rem; color: #ccc;">
-                    <li><a href="https://n8n.io/" style="color: #00d2ff; text-decoration: none;" target="_blank">→ n8n (Open Source Automation)</a></li><li><a href="https://python.langchain.com/" style="color: #00d2ff; text-decoration: none;" target="_blank">→ Python LangChain Docs</a></li><li><a href="https://github.com/Significant-Gravitas/Auto-GPT" style="color: #00d2ff; text-decoration: none;" target="_blank">→ AutoGPT GitHub</a></li><li><a href="https://huggingface.co/models" style="color: #00d2ff; text-decoration: none;" target="_blank">→ Hugging Face Models</a></li>
-                </ul>
-            </div>
-            
-            <div style="text-align: center; background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%); padding: 2rem; border-radius: 15px; border: 1px solid #333;">
-                <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Acceso inmediato al reporte estratégico completo.</p>
-                <a href="https://www.paypal.com/checkoutnow?token=683025866N4962600" class="buy-button" style="font-size: 1.3rem; padding: 15px 40px;">🔓 Desbloquear Sovereign Automation: Ai Automation Agents</a>
-                <p style="font-size: 0.8rem; color: #777; margin-top: 1rem;">* Procesamiento seguro vía PayPal. Entrega digital instantánea.</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+            <footer>
+                &copy; 2026 Sovereign Digital Intelligence | Producido por MININA
+            </footer>
+        </body>
+        </html>
+        
