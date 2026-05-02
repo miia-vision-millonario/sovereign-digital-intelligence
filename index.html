@@ -1,372 +1,142 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MININA Editorial | Inteligencia Soberana</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
-<style>
-:root {
-    --bg: #030508;
-    --surface: #0a0c12;
-    --gold: #d4af37;
-    --gold-bright: #f1d592;
-    --text: #f8fafc;
-    --dim: #94a3b8;
-    --border: rgba(212, 175, 55, 0.1);
-    --gold-glow: rgba(212, 175, 55, 0.15);
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Editorial | Máquina de Activos Digitales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070a;
+            --surface: #0f1218;
+            --accent: #d4af37; /* Gold Sovereign */
+            --text: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --border: rgba(212, 175, 55, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Outfit', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 80px 20px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1e26 0%, #05070a 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { 
+            font-weight: 900; 
+            font-size: 0.9rem; 
+            letter-spacing: 0.3rem; 
+            color: var(--accent); 
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+        .subtitle { font-size: 1.2rem; color: var(--text-dim); max-width: 700px; margin: 0 auto; }
+        
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title::after { content: ""; height: 1px; flex-grow: 1; background: var(--border); }
 
-* { margin: 0; padding: 0; box-sizing: border-box; cursor: default; }
-body { 
-    background: var(--bg); 
-    color: var(--text); 
-    font-family: 'Outfit', sans-serif; 
-    line-height: 1.6; 
-    overflow-x: hidden;
-}
+        .assets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
 
-/* Fondo con efecto de profundidad */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 50% -20%, #1a1e26 0%, transparent 50%);
-    z-index: -1;
-}
+        /* Asset Card Styling */
+        .asset-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 40px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+        .asset-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .asset-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 0.1rem;
+        }
+        .asset-card h3 { font-size: 1.8rem; margin-bottom: 20px; color: #fff; line-height: 1.2; }
+        .asset-card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 30px; }
+        
+        .asset-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        .price { font-weight: 700; font-size: 1.4rem; color: #fff; }
+        .btn-buy {
+            background: var(--accent);
+            color: #000;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn-buy:hover { background: #fff; }
 
-header {
-    padding: 2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(20px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border);
-}
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
 
-.logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none;
-}
-
-.logo-svg {
-    width: 40px;
-    height: 40px;
-    filter: drop-shadow(0 0 8px var(--gold-glow));
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #fff;
-    text-transform: uppercase;
-}
-.logo-text span { color: var(--gold); }
-
-.hero {
-    padding: 12rem 5% 8rem;
-    text-align: center;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -3px;
-    margin-bottom: 2rem;
-    background: linear-gradient(to bottom, #fff 40%, var(--gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    color: var(--dim);
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 3rem;
-    max-width: 1600px;
-    margin: 0 auto 12rem;
-    padding: 0 5%;
-}
-
-.card {
-    background: var(--surface);
-    border-radius: 32px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.card:hover {
-    transform: translateY(-20px) scale(1.02);
-    border-color: var(--gold);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 30px var(--gold-glow);
-}
-.card:hover::before { opacity: 1; }
-
-.card-img-wrap {
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-}
-
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.card:hover .card-img { transform: scale(1.1); }
-
-.card-body { padding: 3rem; flex: 1; display: flex; flex-direction: column; }
-
-.tag {
-    font-size: 0.75rem;
-    font-weight: 900;
-    color: var(--gold);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-}
-
-.card h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 1.2rem;
-    letter-spacing: -1px;
-}
-
-.card p {
-    color: var(--dim);
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    flex: 1;
-}
-
-.card-foot {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-}
-
-.price {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-}
-
-.btn-buy {
-    background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
-    color: #000;
-    padding: 14px 32px;
-    border-radius: 16px;
-    font-weight: 900;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.4s;
-    border: none;
-    cursor: pointer;
-}
-
-.card:hover .btn-buy {
-    background: #fff;
-    box-shadow: 0 0 25px var(--gold);
-}
-
-.empty-state {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 10rem;
-    border: 2px dashed var(--border);
-    border-radius: 40px;
-    color: var(--dim);
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}
-
-footer {
-    padding: 8rem 5%;
-    text-align: center;
-    border-top: 1px solid var(--border);
-    color: var(--dim);
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-</style>
-<script>
-document.addEventListener('mousemove', e => {
-    document.querySelectorAll('.card').forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--x', `${x}px`);
-        card.style.setProperty('--y', `${y}px`);
-    });
-});
-</script>
+        /* INJECTION POINT DO NOT REMOVE */
+        <!-- ASSETS_HOLDER -->
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Sovereign Editorial System</div>
+        <h1>Construye una Máquina de Activos.</h1>
+        <p class="subtitle">Transformamos conocimiento en infraestructura intelectual monetizable. Producción industrial, escala soberana, activos de Clase A.</p>
+    </header>
 
-<header>
-    <a href="index.html" class="logo-wrap">
-        <svg class="logo-svg" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#f1d592;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#8b6d11;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <rect x="20" y="20" width="60" height="60" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
-            <path d="M40 50 L50 40 L60 50 L50 60 Z" fill="url(#goldGrad)">
-                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
-            </path>
-        </svg>
-        <div class="logo-text">MININA<span>.Editorial</span></div>
-    </a>
-</header>
+    <div class="container">
+        <div class="section-title">Inventario de Activos Disponibles</div>
+        
+        <div class="assets-grid" id="assets-container">
+            <!-- ASSETS_START -->
+            <!-- ASSETS_END -->
+        </div>
+    </div>
 
-<section class="hero">
-    <h1>Elite Industrial<br>Assets</h1>
-    <p>La forja de activos de Clase A para la economía soberana de 2026. Conocimiento técnico, ROI asimétrico y autonomía total.</p>
-</section>
-
-<div class="grid">
-    <!-- ACTIVO AUTO-GENERADO: FINAL_MASTER_V4_IA_ALPHA -->
-    <a href="#" class="card">
-        <div class="card-img-wrap">
-            <div style="width:100%; height:100%; background:linear-gradient(135deg, #0a0c12 0%, #1a1e26 100%); display:flex; align-items:center; justify-content:center; color:rgba(212,175,55,0.3); font-weight:900; font-size:2rem;">CLASE A</div>
-        </div>
-        <div class="card-body">
-            <div class="tag">Premium Asset #0501</div>
-            <h3>IA Agents Alpha: Sistema Operativo de Workflows Autónomos (Clase A Industrial)</h3>
-            <p>Precio evaluado por mercado....</p>
-            <div class="card-foot">
-                <div class="price">$232.05 USD</div>
-                <button class="btn-buy">ADQUIRIR</button>
-            </div>
-        </div>
-    </a>
-
-    <!-- ACTIVO AUTO-GENERADO: NORMALIZED_V4_IA_ALPHA -->
-    <a href="#" class="card">
-        <div class="card-img-wrap">
-            <div style="width:100%; height:100%; background:linear-gradient(135deg, #0a0c12 0%, #1a1e26 100%); display:flex; align-items:center; justify-content:center; color:rgba(212,175,55,0.3); font-weight:900; font-size:2rem;">CLASE A</div>
-        </div>
-        <div class="card-body">
-            <div class="tag">Premium Asset #0501</div>
-            <h3>IA Agents Alpha: Sistema Operativo de Workflows Autónomos (Clase A Industrial)</h3>
-            <p>Precio evaluado por mercado....</p>
-            <div class="card-foot">
-                <div class="price">$232.05 USD</div>
-                <button class="btn-buy">ADQUIRIR</button>
-            </div>
-        </div>
-    </a>
-
-    <!-- ACTIVO AUTO-GENERADO: FINAL_MASTER_V4_IA_ALPHA -->
-    <a href="#" class="card">
-        <div class="card-img-wrap">
-            <div style="width:100%; height:100%; background:linear-gradient(135deg, #0a0c12 0%, #1a1e26 100%); display:flex; align-items:center; justify-content:center; color:rgba(212,175,55,0.3); font-weight:900; font-size:2rem;">CLASE A</div>
-        </div>
-        <div class="card-body">
-            <div class="tag">Premium Asset #0501</div>
-            <h3>IA Agents Alpha: Sistema Operativo de Workflows Autónomos (Clase A Industrial)</h3>
-            <p>Precio evaluado por mercado....</p>
-            <div class="card-foot">
-                <div class="price">$232.05 USD</div>
-                <button class="btn-buy">ADQUIRIR</button>
-            </div>
-        </div>
-    </a>
-
-    <!-- ACTIVO AUTO-GENERADO: ELITE_V3_IA_ALPHA -->
-    <a href="#" class="card">
-        <div class="card-img-wrap">
-            <div style="width:100%; height:100%; background:linear-gradient(135deg, #0a0c12 0%, #1a1e26 100%); display:flex; align-items:center; justify-content:center; color:rgba(212,175,55,0.3); font-weight:900; font-size:2rem;">CLASE A</div>
-        </div>
-        <div class="card-body">
-            <div class="tag">Premium Asset #0501</div>
-            <h3>IA Agents Alpha: Sistema Operativo de Workflows Autónomos (Clase A Industrial)</h3>
-            <p>Precio evaluado por mercado....</p>
-            <div class="card-foot">
-                <div class="price">$232.05 USD</div>
-                <button class="btn-buy">ADQUIRIR</button>
-            </div>
-        </div>
-    </a>
-
-    <!-- ACTIVO AUTO-GENERADO: SURGICAL_V2_IA_ALPHA -->
-    <a href="#" class="card">
-        <div class="card-img-wrap">
-            <div style="width:100%; height:100%; background:linear-gradient(135deg, #0a0c12 0%, #1a1e26 100%); display:flex; align-items:center; justify-content:center; color:rgba(212,175,55,0.3); font-weight:900; font-size:2rem;">CLASE A</div>
-        </div>
-        <div class="card-body">
-            <div class="tag">Premium Asset #0501</div>
-            <h3>IA Agents Alpha: Sistema Operativo de Workflows Autónomos (Clase A Industrial)</h3>
-            <p>Precio evaluado por mercado....</p>
-            <div class="card-foot">
-                <div class="price">$232.05 USD</div>
-                <button class="btn-buy">ADQUIRIR</button>
-            </div>
-        </div>
-    </a>
-
-    <a href="posts/post_1777673313.html" class="card">
-        <div class="card-img-wrap">
-            <img src="assets/covers/post_1777673313.svg" class="card-img" onerror="this.style.background='linear-gradient(135deg, #05070a 0%, #1a1e26 100%)'">
-        </div>
-        <div class="card-body">
-            <div class="tag">Activo Soberano #01</div>
-            <h3>AI Autonomous Agents: Protocolo Industrial</h3>
-            <p>El blueprint técnico para la creación de entidades de software con agencia financiera y autonomía total en 2026.</p>
-            <div class="card-foot">
-                <div class="price">CLASE A</div>
-                <button class="btn-buy">ADQUIRIR</button>
-            </div>
-        </div>
-    </a>
-</div>
-
-
-<footer>
-    &copy; 2026 MININA SOVEREIGN INTELLIGENCE | ACCESO RESTRINGIDO
-</footer>
-
-</body></html>
+    <footer>
+        &copy; 2026 MIIA Vision Millonario. Operación Soberana de Activos Digitales.
+    </footer>
+</body>
+</html>
