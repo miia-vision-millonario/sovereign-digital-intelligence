@@ -1,93 +1,159 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Autonomous Agents: Protocolo Industrial | Sovereign Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+<title>AI Autonomous Agents | MININA Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
 <style>
-:root { 
-    --bg:#020408; 
-    --surface:#0a0c10; 
-    --accent:#00dcff; 
-    --accent-gold:#d4af37;
-    --text:#f0f4f8; 
-    --dim:#718096; 
-    --border:rgba(255,255,255,0.05); 
-    --glass:rgba(10, 12, 16, 0.8);
+:root {
+    --bg: #030508;
+    --surface: #0a0c12;
+    --gold: #d4af37;
+    --text: #f8fafc;
+    --dim: #94a3b8;
+    --border: rgba(212, 175, 55, 0.1);
 }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes shine { from { left: -100%; } to { left: 100%; } }
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Inter', sans-serif;line-height:1.6;overflow-x:hidden}
+body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; line-height: 1.8; overflow-x: hidden; }
 
-header{padding:1.5rem 5%;display:flex;justify-content:space-between;align-items:center;background:var(--glass);backdrop-filter:blur(30px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:900;font-size:1.2rem;text-transform:uppercase;letter-spacing:4px}
-.logo span{color:var(--accent)}
-
-.post-wrap{max-width:1000px;margin:6rem auto;padding:0 5%}
-.post-head{text-align:center;margin-bottom:5rem}
-.post-head h1{font-size:4rem;color:#fff;margin:1.5rem 0;font-weight:900;letter-spacing:-3px;line-height:1}
-.post-cover{width:100%;border-radius:40px;border:1px solid var(--border);margin-bottom:5rem;box-shadow:0 60px 120px rgba(0,0,0,0.6)}
-
-.post-body{background:var(--surface);padding:5rem;border-radius:48px;border:1px solid var(--border);font-size:1.2rem;line-height:2.2;color:#cbd5e1}
-.post-body h2{font-size:2.5rem;color:#fff;margin:4rem 0 2rem;border-left:4px solid var(--accent);padding-left:1.5rem}
-.post-body h3{color:var(--accent);margin:2.5rem 0 1.5rem;font-size:1.6rem;text-transform:uppercase;letter-spacing:2px}
-.post-body strong{color:#fff}
-.post-body p{margin-bottom:2rem}
-.post-body ul, .post-body ol{margin-bottom:2rem;padding-left:2rem}
-.post-body li{margin-bottom:1rem}
-
-.cta{
-    margin-top:8rem;
-    text-align:center;
-    background:linear-gradient(180deg, #0f1218 0%, #020408 100%);
-    padding:6rem 4rem;
-    border-radius:56px;
-    border:1px solid var(--accent);
-    box-shadow:0 0 100px rgba(0,220,255,0.05);
+header {
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    position: sticky; top: 0; z-index: 1000;
 }
-.btn{background:#fff;color:#000;padding:20px 40px;border-radius:20px;text-decoration:none;font-weight:900;transition:0.4s;display:inline-block}
-.btn:hover{background:var(--accent);box-shadow:0 0 30px var(--accent)}
 
-footer{text-align:center;padding:8rem 2rem;border-top:1px solid var(--border);color:var(--dim);font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
-</style></head><body>
-<header><a href="../index.html" class="logo"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="50" height="50" rx="12" fill="none" stroke="#00dcff" stroke-width="8"/><path d="M40 50 L50 40 L60 50 L50 60 Z" fill="#00dcff"/></svg> Sovereign Digital</a></header>
-<div class="post-wrap">
-  <div class="post-head">
-    <div class="tag">ACTIVO SOBERANO #01</div>
-    <h1>AI Autonomous Agents: Protocolo Industrial</h1>
-    <div class="price" style="color:var(--accent);font-size:1.8rem">CLASE A - 2026</div>
-  </div>
-  
-  <div class="post-body">
-    <h2>1. El Fin de la Asistencia Pasiva</h2>
-    <p>El año 2026 marca un punto de inflexión: la transición definitiva de la Inteligencia Artificial como mera herramienta de asistencia pasiva a la <strong>Agencia Autónoma</strong>. Este documento define el protocolo industrial para la creación y despliegue de Agentes Autónomos de Alto Rendimiento (AAAR).</p>
+.logo-wrap { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+.logo-svg { width: 35px; height: 35px; }
+.logo-text { font-size: 1.3rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+.logo-text span { color: var(--gold); }
 
-    <h3>Arquitectura de Enrutamiento Soberano (AES)</h3>
-    <p>La eficiencia de un AAAR depende directamente de su capacidad para elegir el proveedor de recursos óptimo en cada momento. El protocolo AES permite a los agentes tomar decisiones informadas sobre la utilización de recursos computacionales.</p>
-    <ul>
-        <li><strong>Monitoreo en Tiempo Real:</strong> Evaluación continua de Groq, OpenRouter y soluciones locales.</li>
-        <li><strong>Motor de Decisión:</strong> Algoritmos que consideran Latencia, Costo por Token y Calidad del Modelo.</li>
-    </ul>
+.post-container { max-width: 900px; margin: 6rem auto; padding: 0 5%; }
 
-    <h3>Ciclos de Autonomía Total (CAT)</h3>
-    <p>La clave para la robustez reside en la capacidad para operar ante errores imprevistos. El CAT define los protocolos para la auto-corrección y la persistencia de datos descentralizada.</p>
-    <ul>
-        <li><strong>Detección de Anomalías:</strong> ML para identificar patrones de fallo antes de que ocurran.</li>
-        <li><strong>Persistencia Descentralizada:</strong> Almacenamiento de estados en IPFS/Filecoin para resistencia a la censura.</li>
-    </ul>
+.post-head { text-align: center; margin-bottom: 5rem; }
+.tag { color: var(--gold); font-weight: 900; letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1.5rem; }
+.post-head h1 { font-size: 4rem; font-weight: 900; letter-spacing: -3px; color: #fff; line-height: 1; margin-bottom: 2rem; }
 
-    <h3>Integración Financiera y Gestión de Vault</h3>
-    <p>La capacidad de los AAAR para gestionar sus propios recursos financieros es fundamental. La IF define los protocolos para la gestión del presupuesto y el vault de seguridad del agente.</p>
-    <p>Utilizamos técnicas de encriptación y autenticación multi-factor para proteger el vault contra accesos no autorizados, permitiendo transacciones automatizadas en redes soberanas.</p>
+.post-body { font-size: 1.25rem; color: #cbd5e1; }
+.post-body h2 { color: #fff; font-size: 2.2rem; margin: 4rem 0 2rem; }
+.post-body p { margin-bottom: 2rem; }
 
-    <h2>Conclusión</h2>
-    <p>En 2026, la Inteligencia Soberana impulsada por los AAAR redefinirá la economía global. La adopción de estos protocolos será crucial para las organizaciones que buscan liderar la transformación económica del futuro.</p>
-  </div>
+/* Sistema de Paywall */
+.paywall-wrapper {
+    position: relative;
+    margin-top: 4rem;
+}
 
-  <div class="cta">
-    <h2 style="font-size: 2rem; margin-bottom: 2rem;">Acceso al Protocolo Completo</h2>
-    <p style="color:var(--dim); margin-bottom: 2.5rem;">Adquiere la versión técnica extendida con los blueprints de implementación para tu propia infraestructura soberana.</p>
-    <a href="#" class="btn">DESBLOQUEAR PROTOCOLO - $9.99</a>
-  </div>
+.blurred-content {
+    filter: blur(12px);
+    opacity: 0.3;
+    pointer-events: none;
+    user-select: none;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+}
+
+.paywall-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    padding-top: 5rem;
+}
+
+.paywall-card {
+    background: rgba(10, 12, 18, 0.8);
+    backdrop-filter: blur(30px);
+    padding: 4rem;
+    border-radius: 40px;
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 100px rgba(212, 175, 55, 0.1);
+    max-width: 600px;
+}
+
+.paywall-card h2 { color: #fff; margin-bottom: 1.5rem; font-size: 2rem; }
+.paywall-card p { color: var(--dim); margin-bottom: 2.5rem; font-size: 1rem; }
+
+.btn-unlock {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
+    color: #000;
+    padding: 20px 48px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+.btn-unlock:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px var(--gold);
+}
+
+footer { padding: 8rem 0; text-align: center; border-top: 1px solid var(--border); color: var(--dim); letter-spacing: 2px; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="logo-wrap">
+        <svg class="logo-svg" viewBox="0 0 100 100">
+            <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f1d592;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#8b6d11;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <rect x="20" y="20" width="60" height="60" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
+            <path d="M40 50 L50 40 L60 50 L50 60 Z" fill="url(#goldGrad)"></path>
+        </svg>
+        <div class="logo-text">MININA<span>.Editorial</span></div>
+    </a>
+</header>
+
+<div class="post-container">
+    <div class="post-head">
+        <div class="tag">Activo Soberano #01</div>
+        <h1>AI Autonomous Agents: Protocolo Industrial</h1>
+        <p style="color: var(--gold); font-weight: 800; font-size: 1.5rem;">CÓDIGO DE CLASE A - AUDITADO</p>
+    </div>
+
+    <div class="post-body">
+        <p><strong>El año 2026 marca el fin de la Inteligencia Artificial como herramienta asistida.</strong> Bienvenidos a la era de la Agencia Autónoma. Este protocolo no es una guía de uso; es la constitución técnica para el despliegue de entidades digitales capaces de operar, transaccionar y auto-corregirse en mercados de alta volatilidad sin intervención humana.</p>
+        
+        <p>La adopción de este protocolo garantiza la creación de una infraestructura soberana donde el activo no solo genera valor, sino que lo protege y lo escala de forma independiente.</p>
+
+        <div class="paywall-wrapper">
+            <div class="blurred-content">
+                <h2>Arquitectura de Enrutamiento Soberano (AES)</h2>
+                <p>El núcleo de la inteligencia se basa en un motor de decisión multimodelo que selecciona el proveedor óptimo en microsegundos...</p>
+                <h3>Implementación del Patrón PAT</h3>
+                <p>Para asegurar la persistencia en redes descentralizadas, el agente ejecuta una secuencia de sincronización IPFS que...</p>
+                <h2>Integración de Vault Financiero</h2>
+                <p>Las llaves privadas son gestionadas mediante un entorno de ejecución seguro (TEE) que previene cualquier fuga de capital...</p>
+            </div>
+
+            <div class="paywall-overlay">
+                <div class="paywall-card">
+                    <h2>Contenido Restringido</h2>
+                    <p>Has llegado al núcleo técnico del protocolo. Para acceder al blueprint completo, el código de despliegue y los parámetros de ROI industrial, debes adquirir la licencia del Activo #01.</p>
+                    <a href="#" class="btn-unlock">DESBLOQUEAR PROTOCOLO - $9.99</a>
+                    <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--gold);">Entrega instantánea certificada por MININA Vault.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<footer><a href="../index.html" style="color:var(--accent);text-decoration:none;font-weight:800">&#8592; VOLVER</a><p style="margin-top:1rem">&copy; 2026 Sovereign Digital Intelligence</p></footer>
+
+<footer>
+    &copy; 2026 MININA SOVEREIGN INTELLIGENCE | ACCESO RESTRINGIDO
+</footer>
+
 </body></html>
