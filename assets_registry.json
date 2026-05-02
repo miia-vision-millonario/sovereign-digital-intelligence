@@ -1,0 +1,41 @@
+{
+  "asset_001": {
+    "id": "asset_001",
+    "title": "AI Autonomous Agents Protocol",
+    "niche": "Inteligencia Artificial",
+    "price": 247,
+    "description": "Sistema completo de agentes autónomos powered by Gemini 2.0",
+    "features": [
+      "Sistema de Conocimiento Cerrado",
+      "Checklists de Ejecución Industrial",
+      "Framework de Activos Clase A",
+      "Plantillas de Implementación"
+    ]
+  },
+  "asset_002": {
+    "id": "asset_002",
+    "title": "Sovereign Digital Infrastructure",
+    "niche": "Estrategia Digital",
+    "price": 197,
+    "description": "Infraestructura completa para operación digital soberana",
+    "features": [
+      "Sistema de Conocimiento Cerrado",
+      "Checklists de Ejecución Industrial",
+      "Framework de Activos Clase A",
+      "Plantillas de Implementación"
+    ]
+  },
+  "asset_003": {
+    "id": "asset_003",
+    "title": "Editorial Excellence Framework",
+    "niche": "Contenido Premium",
+    "price": 147,
+    "description": "Framework para crear contenido de autoridad clase A",
+    "features": [
+      "Sistema de Conocimiento Cerrado",
+      "Checklists de Ejecución Industrial",
+      "Framework de Activos Clase A",
+      "Plantillas de Implementación"
+    ]
+  }
+}
