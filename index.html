@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign Editorial | Máquina de Activos Digitales</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #05070a;
-            --surface: #0f1218;
             --gold: #D4AF37;
             --gold-light: #FFD700;
             --black-pure: #050505;
@@ -45,7 +45,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,1));
+            background: linear-gradient(to bottom, rgba(5,5,5,0.2), rgba(5,5,5,1));
         }
 
         .hero-content {
@@ -74,7 +74,7 @@
 
         .hero p {
             font-size: clamp(1rem, 2vw, 1.4rem);
-            color: #aaa;
+            color: #ccc;
             max-width: 700px;
             margin: 0 auto 40px;
             font-weight: 300;
@@ -115,6 +115,12 @@
             border: 1px solid var(--glass-border);
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        
+        .vision-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
         }
 
         .vision-card h3 {
@@ -157,73 +163,157 @@
         }
 
         .asset-card {
-        }
-        .asset-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        .asset-badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 20px;
-            letter-spacing: 0.1rem;
-        }
-        .asset-card h3 { font-size: 1.8rem; margin-bottom: 20px; color: #fff; line-height: 1.2; }
-        .asset-card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 30px; }
-        
-        .asset-footer {
+            background: var(--black-soft);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            flex-direction: column;
         }
-        .price { font-weight: 700; font-size: 1.4rem; color: #fff; }
-        .btn-buy {
-            background: var(--accent);
-            color: #000;
-            padding: 12px 24px;
-            text-decoration: none;
+
+        .asset-card:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .asset-content {
+            padding: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .asset-tag {
+            font-size: 0.7rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            display: block;
             font-weight: 700;
-            font-size: 0.9rem;
             text-transform: uppercase;
-            transition: all 0.3s;
+            letter-spacing: 1px;
         }
-        .btn-buy:hover { background: #fff; }
+
+        .asset-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .asset-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: auto;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .buy-button {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .buy-button:hover {
+            background: var(--gold);
+            color: var(--black-pure);
+        }
 
         footer {
-            padding: 60px 20px;
+            padding: 80px 5%;
             text-align: center;
-            border-top: 1px solid var(--border);
-            color: var(--text-dim);
+            border-top: 1px solid var(--glass-border);
+            color: #333;
             font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
-        /* INJECTION POINT DO NOT REMOVE */
-        <!-- ASSETS_HOLDER -->
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Sovereign Editorial System</div>
-        <h1>Construye una Máquina de Activos.</h1>
-        <p class="subtitle">Transformamos conocimiento en infraestructura intelectual monetizable. Producción industrial, escala soberana, activos de Clase A.</p>
-    </header>
 
-    <div class="container">
-        <div class="section-title">Inventario de Activos Disponibles</div>
-        
-        <div class="assets-grid" id="assets-container">
-            <!-- ASSETS_START -->
-            <!-- ASSETS_END -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Sovereign Editorial System</span>
+            <h1>Construye una Máquina de Activos.</h1>
+            <p>Transformamos conocimiento técnico en infraestructura intelectual monetizable. Producción industrial, escala soberana, activos de Clase A.</p>
+            <a href="#inventory" class="cta-button">Explorar Bóveda</a>
         </div>
-    </div>
+    </section>
+
+    <section class="vision">
+        <div class="vision-card">
+            <h3>Propiedad Intelectual</h3>
+            <p>Usted no compra contenido; adquiere sistemas de conocimiento diseñados para ser la base de su imperio digital.</p>
+        </div>
+        <div class="vision-card">
+            <h3>Escala Industrial</h3>
+            <p>Cada activo es forjado con una densidad técnica que elimina la competencia y asegura autoridad inmediata en su nicho.</p>
+        </div>
+        <div class="vision-card">
+            <h3>Soberanía Operativa</h3>
+            <p>Infraestructura blindada para el operador autónomo que busca independencia total de plataformas de terceros.</p>
+        </div>
+    </section>
+
+    <section class="inventory" id="inventory">
+        <div class="inventory-header">
+            <p>Catálogo Certificado</p>
+            <h2>Bóveda de Activos Disponibles</h2>
+        </div>
+        <div id="assets-container" class="assets-grid">
+            <!-- Inyección de activos -->
+        </div>
+    </section>
 
     <footer>
-        &copy; 2026 MIIA Vision Millonario. Operación Soberana de Activos Digitales.
+        &copy; 2026 MIIA VISION MILLONARIO. OPERACIÓN SOBERANA DE ACTIVOS DIGITALES.
     </footer>
+
+    <script>
+        fetch('assets_registry.json')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('assets-container');
+                const assets = Object.values(data).reverse();
+                
+                if(assets.length === 0) {
+                    container.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #444; padding: 50px;'>Bóveda en fase de forja inicial...</p>";
+                    return;
+                }
+
+                assets.forEach(asset => {
+                    const card = document.createElement('div');
+                    card.className = 'asset-card';
+                    card.innerHTML = `
+                        <div class="asset-content">
+                            <span class="asset-tag">${asset.niche || 'Digital Asset'}</span>
+                            <h3 class="asset-title">${asset.title}</h3>
+                            <span class="asset-price">$${asset.price || '47'}.00</span>
+                            <a href="#" class="buy-button">Adquirir Activo</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error("Error cargando el catálogo:", err);
+                document.getElementById('assets-container').innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #444;'>Sincronizando con la red soberana...</p>";
+            });
+    </script>
 </body>
 </html>
