@@ -25,147 +25,46 @@ header {
 }
 
 .logo-wrap { display: flex; align-items: center; gap: 15px; text-decoration: none; }
-.logo-svg { width: 40px; height: 40px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+.logo-svg { width: 40px; height: 40px; }
 .logo-text { font-size: 1.5rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 3px; }
 .logo-text span { color: var(--gold); }
 
-.post-container { max-width: 1000px; margin: 8rem auto; padding: 0 5%; }
+.post-container { max-width: 900px; margin: 6rem auto; padding: 0 5%; }
 
-.post-head { text-align: center; margin-bottom: 8rem; }
-.tag { 
-    color: var(--gold); 
-    font-weight: 900; 
-    letter-spacing: 8px; 
-    text-transform: uppercase; 
-    font-size: 0.9rem; 
-    margin-bottom: 2rem;
-    display: block;
-    animation: glowText 3s infinite;
-}
+.post-head { text-align: center; margin-bottom: 4rem; }
+.tag { color: var(--gold); font-weight: 900; letter-spacing: 8px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+.post-head h1 { font-size: 4.5rem; font-weight: 900; letter-spacing: -3px; color: #fff; line-height: 1; margin-bottom: 1.5rem; }
 
-@keyframes glowText {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; text-shadow: 0 0 15px var(--gold); }
-    100% { opacity: 0.6; }
-}
-
-.post-head h1 { 
-    font-size: 5.5rem; 
-    font-weight: 900; 
-    letter-spacing: -4px; 
-    color: #fff; 
-    line-height: 0.9; 
-    margin-bottom: 3rem;
-    background: linear-gradient(to bottom, #fff 30%, var(--gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
+.post-cover-wrap { text-align: center; margin-bottom: 4rem; }
 .post-cover { 
-    width: 100%; 
-    border-radius: 48px; 
-    border: 1px solid var(--border); 
-    margin-bottom: 8rem; 
-    box-shadow: 0 80px 160px rgba(0,0,0,0.8), 0 0 40px rgba(212, 175, 55, 0.05);
+    max-width: 320px; 
+    border-radius: 24px; 
+    border: 1px solid var(--gold); 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
-.post-body { font-size: 1.4rem; color: #cbd5e1; font-weight: 300; }
-.gold-text { 
-    color: var(--gold); 
-    font-weight: 700; 
-    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+.post-body { font-size: 1.2rem; color: #cbd5e1; font-weight: 300; }
+.gold-text { color: var(--gold); font-weight: 700; }
 
-.highlight-box {
-    background: rgba(212, 175, 55, 0.03);
-    border-left: 4px solid var(--gold);
-    padding: 3rem;
-    margin: 4rem 0;
-    border-radius: 0 24px 24px 0;
-    font-style: italic;
-}
+.section-title { color: #fff; font-size: 2rem; margin: 4rem 0 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 15px; }
+.section-title::before { content: ""; width: 30px; height: 2px; background: var(--gold); display: inline-block; }
 
-.post-body h2 { 
-    color: #fff; 
-    font-size: 2.8rem; 
-    margin: 6rem 0 3rem; 
-    letter-spacing: -2px;
-    font-weight: 800;
-}
+.benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0; }
+.benefit-item { background: rgba(212,175,55,0.03); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); }
+.benefit-item h4 { color: var(--gold); margin-bottom: 0.8rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+.benefit-item p { font-size: 0.95rem; color: var(--dim); line-height: 1.6; }
 
-/* Paywall de Lujo */
-.paywall-wrapper {
-    position: relative;
-    margin-top: 6rem;
-    border-radius: 48px;
-    overflow: hidden;
-}
+.manuscript-value { background: #0a0c12; border: 1px solid var(--gold); padding: 3rem; border-radius: 32px; margin: 4rem 0; position: relative; overflow: hidden; }
+.manuscript-value::after { content: "TOP SECRET"; position: absolute; top: 10px; right: -30px; background: var(--gold); color: #000; padding: 5px 40px; transform: rotate(45deg); font-weight: 900; font-size: 0.7rem; }
 
-.blurred-content {
-    filter: blur(20px);
-    opacity: 0.15;
-    pointer-events: none;
-    user-select: none;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
-}
+.paywall-wrapper { position: relative; margin-top: 4rem; }
+.blurred-content { filter: blur(15px); opacity: 0.15; pointer-events: none; mask-image: linear-gradient(to bottom, black 0%, transparent 80%); }
+.paywall-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 10; }
+.paywall-card { background: rgba(8, 10, 15, 0.95); backdrop-filter: blur(40px); padding: 4rem 3rem; border-radius: 40px; border: 1px solid var(--gold); text-align: center; }
+.btn-unlock { background: var(--gold); color: #000; padding: 18px 48px; border-radius: 16px; text-decoration: none; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; display: inline-block; transition: 0.4s; }
+.btn-unlock:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(212,175,55,0.3); }
 
-.paywall-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 10;
-}
-
-.paywall-card {
-    background: rgba(8, 10, 15, 0.9);
-    backdrop-filter: blur(40px);
-    padding: 6rem 4rem;
-    border-radius: 56px;
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 150px rgba(212, 175, 55, 0.15);
-    max-width: 750px;
-}
-
-.paywall-card h2 { 
-    color: #fff; 
-    margin-bottom: 2rem; 
-    font-size: 2.5rem; 
-    letter-spacing: -1px;
-    background: linear-gradient(to right, #fff, var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.paywall-card p { color: var(--dim); margin-bottom: 4rem; font-size: 1.1rem; line-height: 1.8; }
-
-.btn-unlock {
-    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-    color: #000;
-    padding: 24px 64px;
-    border-radius: 24px;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
-    display: inline-block;
-}
-
-.btn-unlock:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 40px 80px rgba(212, 175, 55, 0.5);
-    background: #fff;
-}
-
-footer { padding: 10rem 0; text-align: center; border-top: 1px solid var(--border); color: var(--dim); letter-spacing: 3px; font-size: 0.8rem; text-transform: uppercase; }
+footer { padding: 6rem 0; text-align: center; border-top: 1px solid var(--border); color: var(--dim); letter-spacing: 2px; font-size: 0.8rem; }
 </style>
 </head>
 <body>
@@ -173,15 +72,9 @@ footer { padding: 10rem 0; text-align: center; border-top: 1px solid var(--borde
 <header>
     <a href="../index.html" class="logo-wrap">
         <svg class="logo-svg" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#f1d592;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#8b6d11;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <rect x="20" y="20" width="60" height="60" rx="15" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
-            <path d="M40 50 L50 40 L60 50 L50 60 Z" fill="url(#goldGrad)"></path>
+            <defs><linearGradient id="g"><stop offset="0" stop-color="#f1d592"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+            <rect x="20" y="20" width="60" height="60" rx="15" fill="none" stroke="url(#g)" stroke-width="8"/>
+            <path d="M40 50 L50 40 L60 50 L50 60 Z" fill="url(#g)"></path>
         </svg>
         <div class="logo-text">MININA<span>.Editorial</span></div>
     </a>
@@ -189,49 +82,71 @@ footer { padding: 10rem 0; text-align: center; border-top: 1px solid var(--borde
 
 <div class="post-container">
     <div class="post-head">
-        <span class="tag">Protocolo de Alta Fidelidad</span>
-        <h1>Soberanía Algorítmica:<br>Agentes Autónomos</h1>
-        <p style="color: var(--gold); font-weight: 800; font-size: 1.8rem; letter-spacing: 4px;">EDICIÓN LIMITADA | CLASE A</p>
+        <span class="tag">Activo de Inteligencia #01</span>
+        <h1>Soberanía Algorítmica</h1>
     </div>
 
-    <img src="../assets/covers/post_1777673313.svg" class="post-cover" alt="AI Autonomous Agents Protocol">
+    <div class="post-cover-wrap">
+        <img src="../assets/covers/post_1777673313.svg" class="post-cover" alt="Sovereign Protocol">
+    </div>
 
     <div class="post-body">
-        <p>No estamos ante una herramienta más. Estamos ante el <span class="gold-text">Manuscrito de Poder</span> que define quién controlará la infraestructura digital en los próximos 24 meses. En un mundo saturado de "asistentes de chat", este activo revela la arquitectura oculta de la <strong>Agencia Soberana</strong>.</p>
+        <p>Usted no está comprando un libro. Está adquiriendo el <span class="gold-text">Blueprint de Ejecución</span> para la mayor transición de riqueza de la era digital. Este manuscrito revela cómo desplegar entidades de software que operan fuera del control centralizado, generando valor las 24 horas del día.</p>
         
-        <div class="highlight-box">
-            "La diferencia entre una empresa que usa IA y un Imperio Digital es la capacidad de sus activos para operar, decidir y transaccionar sin permiso humano. Este protocolo es la llave de esa jaula."
+        <h2 class="section-title">Por qué necesita este Manuscrito</h2>
+        <p>En el mercado actual, la IA es un gasto para la mayoría. Para el Millonario, la IA es un <strong>Activo Generativo</strong>. Este protocolo le enseña a cruzar la brecha entre "usar herramientas" y "poseer sistemas". Sin este conocimiento, usted sigue siendo un usuario; con él, usted es el arquitecto del sistema.</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-item">
+                <h4>Autonomía Financiera</h4>
+                <p>Implementación de agentes capaces de gestionar sus propios presupuestos y wallets de criptoactivos.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Resiliencia Industrial</h4>
+                <p>Estructura de enrutamiento que evita caídas de servicio y optimiza costos por token en tiempo real.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Privacidad Soberana</h4>
+                <p>Protocolos de seguridad para que su lógica de negocio y sus datos nunca abandonen su bóveda privada.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Escalabilidad Asimétrica</h4>
+                <p>Cómo multiplicar su capacidad de producción por 100 sin incrementar su equipo humano.</p>
+            </div>
         </div>
 
-        <p>A continuación, desglosamos los cimientos del <span class="gold-text">Protocolo Industrial de Alto Rendimiento</span>. Si has llegado hasta aquí, ya comprendes que la eficiencia no es una opción, sino la única moneda que importa en el mercado de 2026.</p>
-        
-        <h2>El Corazón de la Máquina</h2>
-        <p>Para lograr la autonomía total, el agente debe desprenderse de la dependencia de una sola API. El <span class="gold-text">Sistema AES (Sovereign Routing)</span> permite que tu infraestructura sea agnóstica, resiliente y, sobre todo, financieramente optimizada en tiempo real.</p>
+        <div class="manuscript-value">
+            <h2 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 1.5rem;">Lo que recibirá hoy:</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem;">◈ <strong>El Blueprint Maestro:</strong> Arquitectura técnica de agentes de Nivel 5.</li>
+                <li style="margin-bottom: 1rem;">◈ <strong>Código de Enrutamiento:</strong> Script listo para producción (Agnóstico de Modelos).</li>
+                <li style="margin-bottom: 1rem;">◈ <strong>Protocolo de Bóveda:</strong> Instrucciones de seguridad de grado militar.</li>
+                <li style="margin-bottom: 1rem;">◈ <strong>Guía de Monetización:</strong> Cómo conectar el agente a pasarelas de pago autónomas.</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Ventajas de la Obtención</h2>
+        <p>La ventaja competitiva de este manuscrito radica en su <strong>Inmediatez Operativa</strong>. No es teoría; es una configuración que puede ser inyectada en sus sistemas hoy mismo para empezar a ver resultados en el próximo ciclo de mercado.</p>
 
         <div class="paywall-wrapper">
             <div class="blurred-content">
-                <h2>Implementación de la Red de Decisión</h2>
-                <p>El código fuente incluido utiliza un patrón de conmutación multicanal que valida el costo por token antes de cada invocación...</p>
-                <h3>Configuración del Vault de Seguridad</h3>
-                <p>Para proteger el flujo de capital del Millonario, hemos integrado una capa de seguridad criptográfica que aisla las llaves privadas...</p>
-                <h2>Automatización del ROI Industrial</h2>
-                <p>El blueprint detalla cómo configurar los umbrales de gasto y los gatillos de escalabilidad automática en infraestructuras cloud...</p>
+                <h2>Implementación Técnica</h2>
+                <p>Para configurar el enrutador soberano, primero debemos establecer las variables de entorno en el servidor seguro...</p>
+                <h2>Gatillos de Decisión</h2>
+                <p>El código utiliza una lógica de pesos donde se evalúa la latencia vs el costo antes de decidir el modelo LLM...</p>
             </div>
-
             <div class="paywall-overlay">
                 <div class="paywall-card">
-                    <h2>¿Estás listo para el Siguiente Nivel?</h2>
-                    <p>Has alcanzado el límite de la zona pública. El conocimiento que sigue contiene el **Blueprint Técnico de Implementación**, el código fuente del enrutador soberano y los protocolos de seguridad del Vault. Este es el núcleo del Activo #01.</p>
-                    <a href="#" class="btn-unlock">ADQUIRIR PROTOCOLO COMPLETO</a>
-                    <p style="margin-top: 3rem; font-size: 0.9rem; color: var(--gold); letter-spacing: 2px;">ACCESO INSTANTÁNEO CERTIFICADO POR LA BÓVEDA MININA</p>
+                    <h2>Desbloquear el Manuscrito Completo</h2>
+                    <p>Acceda a la arquitectura técnica y el código fuente completo ahora mismo.</p>
+                    <a href="#" class="btn-unlock">ADQUIRIR AHORA - $59.99</a>
+                    <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--gold);">CERTIFICADO POR MININA EDITORIAL</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<footer>
-    &copy; 2026 MININA SOVEREIGN INTELLIGENCE | PRODUCCIÓN EXCLUSIVA PARA EL MILLONARIO
-</footer>
+<footer>&copy; 2026 MININA SOVEREIGN INTELLIGENCE | ACCESO RESTRINGIDO</footer>
 
 </body></html>
